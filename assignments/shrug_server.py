@@ -6,7 +6,6 @@ app = Flask(__name__)
 @app.route("/execute", methods=["POST"])
 def executeMessage():
     input = request.get_json()
-    print("input", input)
     if input["data"]["command"] == "shrug":
         data = input["data"]["message"]
         output = jsonify({"data": {"command": "shrug", "message": data + "¯\_(ツ)_/¯"}})
